@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <title>Administrar Produto</title>
+</head>
+
+<body>
+    <a href="../inicio.html" class="back-button">Voltar para Página Inicial</a>
+    
+    <h1>Produtos</h1>
+    <form id="form_Produto">
+        <input type="hidden" id="id">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+        
+        <label for="preco">Preço</label>
+        <input type="text" id="preco">
+        
+        <label for="quantidade">Quantidade</label>
+        <input type="text" id="quantidade">
+        
+        <label for="categoria_id">Categoria</label>
+        <input type="text" id="categoria_id">
+        
+        <button id="btSalvar">Salvar</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>PREÇO</th>
+                <th>QUANTIDADE</th>
+                <th>CATEGORIA</th>
+                <th>OPÇÕES</th>
+            </tr>
+        </thead>
+        <tbody id="tbody1"></tbody>
+    </table>
+</body>
+<script src="manipula_interface_produto.js" type="module"></script>
+
+</html>

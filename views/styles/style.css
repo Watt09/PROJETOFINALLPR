@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    padding: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #34495e;
+    text-align: center;
+  }
+  
+  .back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .back-button:hover {
+    background-color: #1abc9c;
+    color: #ffffff;
+  }
+  
+  form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  form button:hover {
+    background-color: #16a085;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  table thead {
+    background-color: #34495e;
+    color: #ecf0f1;
+  }
+  
+  table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #bdc3c7;
+  }
+  
+  table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  table tbody tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+  
+  table tbody tr:hover {
+    background-color: #f1c40f;
+    color: #ffffff;
+  }
+  
+  table .opcoes-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  table .edit-button {
+    background-color: #1abc9c;
+    color: #ffffff;
+  }
+  
+  table .edit-button:hover {
+    background-color: #16a085;
+  }
+  
+  table .delete-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+  }
+  
+  table .delete-button:hover {
+    background-color: #c0392b;
+  }
+  
