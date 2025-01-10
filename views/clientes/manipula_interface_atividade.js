@@ -11,7 +11,7 @@ async function salvar() {
 
     const obj = {
         "primeiro_nome": iptprimeiro_nome.value,
-        "sobrenome": iptsobrenome.value,
+        "sobrenome": iptsobrenome.value,  
         "cpf": iptcpf.value,
         "email": iptemail.value,
         "nascimento": iptnascimento.value
