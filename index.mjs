@@ -17,6 +17,6 @@ app.use(express.static('./views/produto'));
 app.use(express.static('./views/pedido'));
 app.use(express.static('./views'));
 
-app.listen(80, '127.0.0.1', function () {
+app.listen(80, function () {
     console.log('Escutando.')
 });
