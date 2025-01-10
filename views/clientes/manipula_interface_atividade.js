@@ -95,7 +95,7 @@ async function DesenhaTabela() {
         btEdi.setAttribute('data-id', dados[i].id);
         btEdi.addEventListener('click', ManipulaEditar);
 
-        btExc.innerText = 'EXCLUIR';
+        btExc.innerText = 'Excluir';
         btExc.setAttribute('data-id', dados[i].id);
         btExc.addEventListener('click', ManipulaExcluir)
 
