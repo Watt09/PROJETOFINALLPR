@@ -10,6 +10,5 @@ const Pedido = conexao.define('Pedido', {
     
 });
 
-Pedido.sync();
 
 export default Pedido;

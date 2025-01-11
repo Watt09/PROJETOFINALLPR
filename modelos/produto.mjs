@@ -8,5 +8,4 @@ const Produto = conexao.define ('Produto', {
     categoria_id: DataTypes.INTEGER,
 })
 
-Produto.sync();
 export default Produto; 

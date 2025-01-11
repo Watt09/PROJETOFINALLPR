@@ -10,6 +10,5 @@ const Cliente = conexao.define('Cliente', {
 
 });
 
-Cliente.sync();
 
 export default Cliente;
