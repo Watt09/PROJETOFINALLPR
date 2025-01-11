@@ -9,8 +9,6 @@ const conexao = new Sequelize({
     dialect: 'postgres'
 })
 
-const mysql = require('mysql2/promise');
-
 async function populateDatabase() {
 
     const insertStatements = [
