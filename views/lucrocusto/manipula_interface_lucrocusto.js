@@ -6,7 +6,6 @@ async function salvar() {
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
-    const iptlucro_liquido = document.getElementById('lucro_liquido');
 
 
     const obj = {
@@ -28,7 +27,6 @@ async function editar() {
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
-    const iptlucro_liquido = document.getElementById('lucro_liquido');
 
 
     const obj = {
@@ -72,7 +70,6 @@ async function ManipulaEditar(event) {
     document.getElementById('fp').value = lucrocusto.fp;
     document.getElementById('cmat').value = lucrocusto.cmat;
     document.getElementById('cman').value = lucrocusto.cman;
-    document.getElementById('lucro_liquido').value = lucrocusto.lucro_liquido;
 
 }
 
