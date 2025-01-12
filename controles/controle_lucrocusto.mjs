@@ -2,9 +2,7 @@ import Lucrocusto from "../modelos/lucrocusto.mjs";
 
 async function novo(req, res) {
     try {
-        const { lucro_bruto, fp, cmat, cman } = req.body;
-    
-        const lucro_liquido = lucro_bruto - (fp + cmat + cman);
+        const { lucro_bruto, fp, cmat, cman, lucro_liquido} = req.body;
     
         const criado = await Lucrocusto.create({
             lucro_bruto,

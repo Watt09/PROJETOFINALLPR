@@ -6,6 +6,7 @@ async function salvar() {
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
+    const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
     const obj = {
@@ -27,6 +28,7 @@ async function editar() {
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
+    const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
     const obj = {
