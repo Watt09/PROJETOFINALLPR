@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
-import Categoria from './categoria.mjs';
-import Cliente from './cliente.mjs';
-import Funcionario from './funcionario.mjs';
-import Lucrocusto from './lucrocusto.mjs';
-import Produto from './produto.mjs';
-import Pedido from './pedido.mjs';
+import Categoria from './modelos/categoria.mjs';
+import Cliente from './modelos/cliente.mjs';
+import Funcionario from './modelos/funcionario.mjs';
+import Lucrocusto from './modelos/lucrocusto.mjs';
+import Produto from './modelos/produto.mjs';
+import Pedido from './modelos/pedido.mjs';
 
 const conexao = new Sequelize({
     host: 'dpg-cu03d15ds78s73euaojg-a',
