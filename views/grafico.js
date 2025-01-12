@@ -21,40 +21,46 @@ async function inicializarGrafico() {
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }
-}
+}}
 
 
-    const grafico = new Chart(ctx, {
-        type: 'bar', // Tipo de gráfico: 'bar', 'line', etc.
+async function inicializarGrafico() {
+    const dados = await buscarDados();
+
+    if (!dados) {
+        console.error('Nenhum dado encontrado.');
+        return;
+    }
+
+    // Configuração do gráfico
+    new Chart(ctx, {
+        type: 'line', 
         data: {
-            labels: dados.meses, // Supondo que 'meses' seja um array com os nomes dos meses
+            labels: dados.labels,
             datasets: [
                 {
-                    label: 'Lucros',
-                    data: dados.lucros, // Array com os valores dos lucros
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
+                    label: 'Lucro Bruto',
+                    data: dados.lucroBruto, 
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
                 },
                 {
-                    label: 'Custos',
-                    data: dados.custos, // Array com os valores dos custos
-                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
-                }
-            ]
+                    label: 'Custo',
+                    data: dados.custo, 
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                },
+                {
+                    label: 'Lucro Líquido',
+                    data: dados.lucroLiquido, 
+                    backgroundColor: 'rgba(153, 102, 255, 0.6)',
+                },
+            ],
         },
         options: {
             responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
+            plugins: {
+                legend: { position: 'top' },
+                title: { display: true, text: 'Lucro Bruto, Custo e Lucro Líquido' },
+            },
+        },
     });
 }
-
-// Chama a função para inicializar o gráfico quando a página for carregada
-window.onload = inicializarGrafico;
