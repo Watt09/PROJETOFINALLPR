@@ -15,7 +15,7 @@ app.use('/produto', rotas_produto);
 app.use('/categoria', rotas_categoria);
 app.use('/pedido', rotas_pedido);
 app.use('/funcionario', rotas_funcionario);
-app.use('/lucrocustos', rotas_lucrocusto);
+app.use('/lucrocusto', rotas_lucrocusto);
 app.use(express.static('./views/clientes'));
 app.use(express.static('./views/categoria'));
 app.use(express.static('./views/produto'));
