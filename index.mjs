@@ -20,7 +20,6 @@ app.use(express.static('./views/clientes'));
 app.use(express.static('./views/categoria'));
 app.use(express.static('./views/produto'));
 app.use(express.static('./views/pedido'));
-app.use(express.static('./views/pedido'));
 app.use(express.static('./views/funcionario'));
 app.use(express.static('./views/lucrocusto'));
 app.use(express.static('./views'));

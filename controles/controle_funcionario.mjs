@@ -1,6 +1,7 @@
 import Funcionario from "../modelos/funcionario.mjs";
 
 async function novo(req, res) {
+    try {
     const criado = await Funcionario.create({
         primeiro_nome: req.body.primeiro_nome,
         sobrenome: req.body.sobrenome,
@@ -11,6 +12,9 @@ async function novo(req, res) {
 
     });
     res.json(criado);
+} catch (error) {
+    res.status(500).json({ error: 'Erro ao criar funcionário', detalhes: error.message });
+  }
 }
 
 async function todos(req, res) {
