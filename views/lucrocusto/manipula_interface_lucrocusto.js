@@ -2,6 +2,7 @@ import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_lucrocust
 
 //Funções
 async function salvar() {
+    const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
@@ -10,6 +11,7 @@ async function salvar() {
 
 
     const obj = {
+        "mes": iptmes.value,
         "lucro_bruto": iptlucro_bruto.value,
         "fp": iptfp.value,  
         "cmat": iptcmat.value,
@@ -24,6 +26,7 @@ async function salvar() {
 
 async function editar() {
     const iptid = document.getElementById('id');
+    const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
@@ -33,6 +36,7 @@ async function editar() {
 
     const obj = {
         "id": iptid.value,
+        "mes": iptmes.value,
         "lucro_bruto": iptlucro_bruto.value,
         "fp": iptfp.value,
         "cmat": iptcmat.value,
@@ -68,6 +72,7 @@ async function ManipulaEditar(event) {
     const id = event.target.getAttribute('data-id');
     const lucrocusto = await buscaUm(id);
     document.getElementById('id').value = lucrocusto.id;
+    document.getElementById('mes').value = lucrocusto.mes;
     document.getElementById('lucro_bruto').value = lucrocusto.lucro_bruto;
     document.getElementById('fp').value = lucrocusto.fp;
     document.getElementById('cmat').value = lucrocusto.cmat;
@@ -87,6 +92,7 @@ async function DesenhaTabela() {
         const td4 = document.createElement('td');
         const td5 = document.createElement('td');
         const td6 = document.createElement('td');
+        const td7 = document.createElement('td');
         const btExc = document.createElement('button');
         const btEdi = document.createElement('button');
 
@@ -99,13 +105,14 @@ async function DesenhaTabela() {
         btExc.addEventListener('click', ManipulaExcluir)
 
 
+        td7.innerText = dados[i].mes;
         td1.innerText = dados[i].lucro_bruto;
         td2.innerText = dados[i].fp;
         td3.innerText = dados[i].cmat;
         td4.innerText = dados[i].cman;
         td5.innerText = dados[i].lucro_liquido;
         td6.append(btExc, btEdi);
-        tr.append(td1, td2, td3, td4, td5, td6);
+        tr.append(td7, td1, td2, td3, td4, td5, td6);
         tbody.append(tr);
     }
 }

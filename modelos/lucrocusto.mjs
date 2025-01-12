@@ -2,6 +2,10 @@ import { DataTypes } from "sequelize";
 import conexao from "../database/mysql.mjs";
 
 const Lucrocusto = conexao.define('Lucrocusto', {
+  mes: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   lucro_bruto: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,

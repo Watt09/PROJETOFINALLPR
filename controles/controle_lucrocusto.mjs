@@ -2,9 +2,10 @@ import Lucrocusto from "../modelos/lucrocusto.mjs";
 
 async function novo(req, res) {
     try {
-      const { lucro_bruto, fp, cmat, cman } = req.body;
+      const { mes, lucro_bruto, fp, cmat, cman } = req.body;
   
       const criado = await Lucrocusto.create({
+        mes,
         lucro_bruto,
         fp,
         cmat,
@@ -38,7 +39,8 @@ async function altera(req, res) {
         where: { id: req.body.id }
     });
 
-    cli.lucro_bruto = req.body.lucro_bruto,
+        cli.mes=req.body.mes,
+        cli.lucro_bruto = req.body.lucro_bruto,
         cli.fp = req.body.fp,
         cli.cmat = req.body.cmat,
         cli.cman = req.body.cman,
