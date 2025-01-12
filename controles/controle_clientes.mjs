@@ -30,7 +30,7 @@ async function altera(req, res) {
         where: { id: req.body.id }
     });
 
-    cli.primeiro_nome = req.body.primeiro_nome,
+        cli.primeiro_nome = req.body.primeiro_nome,
         cli.sobrenome = req.body.sobrenome,
         cli.cpf = req.body.cpf,
         cli.email = req.body.email,

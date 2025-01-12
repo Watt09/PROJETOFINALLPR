@@ -4,6 +4,7 @@ import Produto from "./produto.mjs";
 import Cliente from "./cliente.mjs";
 import Categoria from "./categoria.mjs";
 import Funcionario from "./funcionario.mjs";
+import Lucrocusto from "./lucrocusto.mjs"
 
 Produto.belongsToMany(Pedido, { through: 'PedidoProduto' });
 Pedido.belongsToMany(Produto, { through: 'PedidoProduto' });
