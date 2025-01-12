@@ -68,5 +68,4 @@ const dadosIniciais = {
         { id_cliente: 3, id_produto: 3, valor: 75.00, data: '2025-01-12' },
     ],
 };
-
-export default {conexao, autoPopulate};
+export { conexao, autoPopulate };
