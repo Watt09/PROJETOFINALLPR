@@ -20,6 +20,7 @@ app.use(express.static('./views/produto'));
 app.use(express.static('./views/pedido'));
 app.use(express.static('./views/pedido'));
 app.use(express.static('./views/funcionario'));
+app.use(express.static('./views'));
 
 app.listen(80, function () {
     console.log('Escutando.')
