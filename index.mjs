@@ -13,13 +13,13 @@ app.use('/clientes', rotas_clientes);
 app.use('/produto', rotas_produto);
 app.use('/categoria', rotas_categoria);
 app.use('/pedido', rotas_pedido);
-app.use('/funcionario', rotas_funcioanrio);
+app.use('/funcionario', rotas_funcionario);
 app.use(express.static('./views/clientes'));
 app.use(express.static('./views/categoria'));
 app.use(express.static('./views/produto'));
 app.use(express.static('./views/pedido'));
 app.use(express.static('./views/pedido'));
-app.use(express.static('./views/funcioanrio'));
+app.use(express.static('./views/funcionario'));
 
 app.listen(80, function () {
     console.log('Escutando.')
