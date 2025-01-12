@@ -69,4 +69,4 @@ const dadosIniciais = {
     ],
 };
 
-export {conexao, autoPopulate};
+export default {conexao, autoPopulate};
