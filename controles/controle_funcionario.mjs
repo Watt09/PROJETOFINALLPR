@@ -2,20 +2,25 @@ import Funcionario from "../modelos/funcionario.mjs";
 
 async function novo(req, res) {
     try {
-    const criado = await Funcionario.create({
-        primeiro_nome: req.body.primeiro_nome,
-        sobrenome: req.body.sobrenome,
-        cpf: req.body.cpf,
-        email: req.body.email,
-        nascimento: req.body.nascimento,
-        salario: req.body.salario,
+      const { primeiro_nome, sobrenome, cpf, email, nascimento, salario} = req.body;
+  
+      const criado = await Funcionario.create({
+        primeiro_nome,
+        sobrenome,
+        cpf,
+        email,
+        nascimento,
+        salario,
 
-    });
-    res.json(criado);
-} catch (error) {
-    res.status(500).json({ error: 'Erro ao criar funcionário', detalhes: error.message });
+      });
+  
+      const funcionario = criado.funcionario;
+  
+      res.json({ ...criado.toJSON(), funcionario });
+    } catch (error) {
+      res.status(500).json({ error: 'Erro ao criar registro', detalhes: error.message });
+    }
   }
-}
 
 async function todos(req, res) {
     const todos = await Funcionario.findAll();
