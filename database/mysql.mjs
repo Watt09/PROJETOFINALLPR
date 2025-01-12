@@ -17,6 +17,7 @@ const conexao = new Sequelize({
 
 const modelos = { Categoria, Cliente, Funcionario, Lucrocusto, Produto, Pedido };
 
+async function autoPopulate() {
 try {
     for (const [nomeModelo, modelo] of Object.entries(modelos)) {
         console.log(`Sincronizando tabela: ${nomeModelo}...`);
@@ -33,6 +34,7 @@ try {
     }
 } catch (error) {
     console.error('Erro ao popular o banco de dados:', error);
+}
 }
 
 const dadosIniciais = {
@@ -67,5 +69,4 @@ const dadosIniciais = {
     ],
 };
 
-export default autoPopulate;
-export default conexao;
+export {conexao, autoPopulate};
