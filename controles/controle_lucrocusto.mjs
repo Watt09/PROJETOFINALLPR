@@ -2,21 +2,27 @@ import Lucrocusto from "../modelos/lucrocusto.mjs";
 
 async function novo(req, res) {
     try {
-        const { lucro_bruto, fp, cmat, cman, lucro_liquido} = req.body;
-    
-        const criado = await Lucrocusto.create({
-            lucro_bruto,
-            fp, 
-            cmat, 
-            cman,
-            lucro_liquido, 
-        });
-    res.json(criado);
-} catch (error) {
-    console.error('Erro ao criar registro:', error);
-    res.status(500).json({ error: 'Erro ao criar registro' });
-}
-}
+      const { lucro_bruto, fp, cmat, cman } = req.body;
+  
+      // Cria o registro no banco de dados
+      const criado = await Lucrocusto.create({
+        lucro_bruto,
+        fp,
+        cmat,
+        cman,
+      });
+  
+      // Calcula o lucro líquido utilizando o getter virtual
+      const lucro_liquido = criado.lucro_liquido;
+  
+      // Retorna o registro criado com o lucro líquido calculado
+      res.json({ ...criado.toJSON(), lucro_liquido });
+    } catch (error) {
+      // Trata erros e retorna uma resposta adequada
+      res.status(500).json({ error: 'Erro ao criar registro', detalhes: error.message });
+    }
+  }
+  
 
 async function todos(req, res) {
     const todos = await Lucrocusto.findAll();
