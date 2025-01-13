@@ -1,15 +1,11 @@
 import todos from "./rotas/rotas_lucrocustos.js"
+import getLista from "./views/lucrocusto/acessa_dados_lucrocusto.js"
 
 async function inicializarGrafico() {
     const dados = await getLista();
     if (!dados) return;
 
     const ctx = document.getElementById('graficoLucrosCustos').getContext('2d');
-
-    async function buscarDados() {
-        try {
-            const response = await fetch('https://projetofinallpr.onrender.com/lucrocusto/listar'); 
-            const dados = await response.json();
 
             const labels = dados.map(item => item.mes);
     
@@ -25,7 +21,7 @@ async function inicializarGrafico() {
 
 
 async function inicializarGrafico() {
-    const dados = await buscarDados();
+    const dados = await getLista();
 
     if (!dados) {
         console.error('Nenhum dado encontrado.');
