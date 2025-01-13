@@ -37,12 +37,12 @@ async function autoPopulate() {
 try {
     for (const [nomeModelo, modelo] of Object.entries(modelos)) {
         console.log(`Sincronizando tabela: ${nomeModelo}...`);
-        await modelo.sync(); // Garante que a tabela existe
+        await modelo.sync(); 
         
-        const count = await modelo.count(); // Conta registros existentes
+        const count = await modelo.count(); 
         if (count = 0) {
             console.log(`Inserindo dados iniciais na tabela: ${nomeModelo}...`);
-            await modelo.bulkCreate(dadosIniciais[nomeModelo]); // Insere os dados iniciais
+            await modelo.bulkCreate(dadosIniciais[nomeModelo]);
             console.log(`Dados iniciais inseridos em: ${nomeModelo}`);
         } else {
             console.log(`Tabela ${nomeModelo} já possui dados.`);
@@ -51,16 +51,6 @@ try {
 } catch (error) {
     console.error('Erro ao popular o banco de dados:', error);
 }
-    try {
-    await sequelize.transaction(async (t) => {
-        await Lucrocusto.bulkCreate(dadosIniciais.Lucrocusto, { transaction: t, validate: true });
-    });
-    console.log('Dados inseridos na tabela Lucrocusto com sucesso.');
-} catch (error) {
-    console.error('Erro ao inserir dados na tabela Lucrocusto:', error);
-}
-}
-
 const dadosIniciais = {
     Categoria: [
         { nome: 'Eletrônicos', descricao: 'Dispositivos eletrônicos e acessórios' },
