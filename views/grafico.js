@@ -1,4 +1,3 @@
-import todos from "./rotas/rotas_lucrocustos.js"
 import getLista from "./views/lucrocusto/acessa_dados_lucrocusto.js"
 
 async function inicializarGrafico() {
