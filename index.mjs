@@ -50,7 +50,7 @@ try {
     }
 } catch (error) {
     console.error('Erro ao popular o banco de dados:', error);
-}
+}}
 const dadosIniciais = {
     Categoria: [
         { nome: 'Eletrônicos', descricao: 'Dispositivos eletrônicos e acessórios' },
