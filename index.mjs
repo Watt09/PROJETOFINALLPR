@@ -6,12 +6,12 @@ import rotas_categoria from './rotas/rotas_categoria.mjs';
 import rotas_funcionario from './rotas/rotas_funcionario.mjs';
 import rotas_lucrocusto from './rotas/rotas_lucrocustos.mjs';
 
-import Categoria from '../modelos/categoria.mjs';
-import Cliente from '../modelos/cliente.mjs';
-import Funcionario from '../modelos/funcionario.mjs';
-import Lucrocusto from '../modelos/lucrocusto.mjs';
-import Produto from '../modelos/produto.mjs';
-import Pedido from '../modelos/pedido.mjs';
+import Categoria from './modelos/categoria.mjs';
+import Cliente from './modelos/cliente.mjs';
+import Funcionario from './modelos/funcionario.mjs';
+import Lucrocusto from './modelos/lucrocusto.mjs';
+import Produto from './modelos/produto.mjs';
+import Pedido from './modelos/pedido.mjs';
 
 const app = express();
 
