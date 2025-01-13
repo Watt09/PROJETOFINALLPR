@@ -5,8 +5,6 @@ import rotas_pedido from './rotas/rotas_pedido.mjs';
 import rotas_categoria from './rotas/rotas_categoria.mjs';
 import rotas_funcionario from './rotas/rotas_funcionario.mjs';
 import rotas_lucrocusto from './rotas/rotas_lucrocustos.mjs';
-import autoPopulate from './database/mysql.mjs';
-import conexao from './modelos/sync.mjs'
 
 import Categoria from '../modelos/categoria.mjs';
 import Cliente from '../modelos/cliente.mjs';
@@ -86,7 +84,8 @@ const dadosIniciais = {
         { id_cliente: 3, id_produto: 3, valor: 75.00, data: '2025-01-12' },
     ],
 };
-await autoPopulate;
+
+autoPopulate();
 
 app.listen(80, function () {
     console.log('Escutando.')
