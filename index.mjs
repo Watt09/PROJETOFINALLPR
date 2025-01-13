@@ -51,6 +51,14 @@ try {
 } catch (error) {
     console.error('Erro ao popular o banco de dados:', error);
 }
+    try {
+    await sequelize.transaction(async (t) => {
+        await Lucrocusto.bulkCreate(dadosIniciais.Lucrocusto, { transaction: t, validate: true });
+    });
+    console.log('Dados inseridos na tabela Lucrocusto com sucesso.');
+} catch (error) {
+    console.error('Erro ao inserir dados na tabela Lucrocusto:', error);
+}
 }
 
 const dadosIniciais = {
