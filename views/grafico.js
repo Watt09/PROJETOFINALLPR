@@ -34,7 +34,7 @@ async function inicializarGrafico() {
 
     // Configuração do gráfico
     new Chart(ctx, {
-        type: 'line', 
+        type: 'bar', 
         data: {
             labels: dados.labels,
             datasets: [
