@@ -40,7 +40,7 @@ try {
         await modelo.sync(); 
         
         const count = await modelo.count(); 
-        if (count = 0) {
+        if (count === 0) {
             console.log(`Inserindo dados iniciais na tabela: ${nomeModelo}...`);
             await modelo.bulkCreate(dadosIniciais[nomeModelo]);
             console.log(`Dados iniciais inseridos em: ${nomeModelo}`);
