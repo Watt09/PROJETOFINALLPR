@@ -95,6 +95,12 @@ async function DesenhaTabela() {
         return meses.indexOf(a.mes) - meses.indexOf(b.mes);
     });
 
+    let totalLucroBruto = 0;
+    let totalFP = 0;
+    let totalCMAT = 0;
+    let totalCMAN = 0;
+    let totalLucroLiquido = 0;
+
     for (let i = 0; i < dados.length; i++) {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
@@ -125,7 +131,37 @@ async function DesenhaTabela() {
         td6.append(btExc, btEdi);
         tr.append(td7, td1, td2, td3, td4, td5, td6);
         tbody.append(tr);
+
+        totalLucroBruto += dados[i].lucro_bruto;
+        totalFP += dados[i].fp;
+        totalCMAT += dados[i].cmat;
+        totalCMAN += dados[i].cman;
+        totalLucroLiquido += dados[i].lucro_liquido;
     }
+
+    const totalRow = document.createElement('tr');
+    totalRow.style.fontWeight = 'bold'; // Destacar a linha de totais
+    totalRow.style.backgroundColor = '#f0f0f0'; // Fundo claro para separação visual
+
+    const tdMesTotal = document.createElement('td');
+    tdMesTotal.innerText = 'Totais';
+    const tdLucroBrutoTotal = document.createElement('td');
+    tdLucroBrutoTotal.innerText = totalLucroBruto;
+    const tdFPTotal = document.createElement('td');
+    tdFPTotal.innerText = totalFP;
+    const tdCMATTotal = document.createElement('td');
+    tdCMATTotal.innerText = totalCMAT;
+    const tdCMANTotal = document.createElement('td');
+    tdCMANTotal.innerText = totalCMAN;
+    const tdLucroLiquidoTotal = document.createElement('td');
+    tdLucroLiquidoTotal.innerText = totalLucroLiquido;
+    const tdEmpty = document.createElement('td'); // Célula vazia para os botões
+
+    // Adicionar células à linha total
+    totalRow.append(tdMesTotal, tdLucroBrutoTotal, tdFPTotal, tdCMATTotal, tdCMANTotal, tdLucroLiquidoTotal, tdEmpty);
+
+    // Adicionar a linha total ao final do tbody
+    tbody.append(totalRow);
 }
 
 //Viculações
