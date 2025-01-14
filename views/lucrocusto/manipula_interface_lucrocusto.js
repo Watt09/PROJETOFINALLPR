@@ -11,8 +11,8 @@ async function salvar() {
 
     const percentual1 = Math.random() * (30 - 20) + 20;
     const percentual2 = Math.random() * (30 - 20) + 20;
-    const valorCalculadoCmat = (lucro_bruto * percentual1) / 100;
-    const valorCalculadoCman = (lucro_bruto * percentual2) / 100;
+    const valorCalculadoCmat = (iptlucro_bruto * percentual1) / 100;
+    const valorCalculadoCman = (iptlucro_bruto * percentual2) / 100;
 
     return valorCalculadoCmat, valorCalculadoCman;
 
