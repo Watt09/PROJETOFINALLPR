@@ -34,7 +34,7 @@ async function editar() {
     const iptsalario = document.getElementById('salario');
 
 
-    const obj = {
+    const objFun = {
         "id": iptid.value,
         "primeiro_nome": iptprimeiro_nome.value,
         "sobrenome": iptsobrenome.value,
@@ -45,7 +45,7 @@ async function editar() {
 
     };
 
-    await edita(obj);
+    await edita(objFun);
     document.forms[0].reset();
     DesenhaTabela();
 }
@@ -124,3 +124,4 @@ btsSalvar.addEventListener('click', ManipulaSalvar);
 
 
 window.addEventListener('load', DesenhaTabela);
+export default objFun;

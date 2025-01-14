@@ -1,6 +1,7 @@
 import getLista from "./views/lucrocusto/acessa_dados_lucrocusto.js"
 
 async function inicializarGrafico() {
+    try{
     const dados = await getLista();
     if (!dados) return;
 
@@ -16,7 +17,7 @@ async function inicializarGrafico() {
     } catch (error) {
         console.error('Erro ao buscar dados:', error);
     }
-}}
+}
 
 
 async function inicializarGrafico() {

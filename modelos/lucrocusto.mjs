@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import conexao from "../database/mysql.mjs";
+import Funcionario from "/funcionario.mjs";
 
 const Lucrocusto = conexao.define('Lucrocusto', {
   mes: {
@@ -11,9 +12,15 @@ const Lucrocusto = conexao.define('Lucrocusto', {
     allowNull: false,
   },
   fp: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
-  },
+    type: DataTypes.VIRTUAL,
+    get() {
+        return this.sequelize.models.Funcionario.sum('salario') 
+            .catch(error => {
+                console.error('Erro ao calcular fp:', error);
+                return 0;
+            });
+    },
+},
   cmat: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false,
