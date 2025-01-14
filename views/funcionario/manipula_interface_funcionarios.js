@@ -1,4 +1,4 @@
-import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_funcionarios.js";
+import { getListaFun, novo, remove, edita, buscaUm } from "./acessa_dados_funcionarios.js";
 
 //Funções
 async function salvar() {
@@ -84,7 +84,7 @@ async function ManipulaEditar(event) {
 async function DesenhaTabela() {
     const tbody = document.getElementById('tbody1');
     tbody.innerHTML = '';
-    const dados = await getLista();
+    const dados = await getListaFun();
     for (let i = 0; i < dados.length; i++) {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
