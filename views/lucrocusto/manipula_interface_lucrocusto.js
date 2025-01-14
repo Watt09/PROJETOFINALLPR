@@ -8,6 +8,14 @@ async function salvar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
+
+    const percentual1 = Math.random() * (30 - 20) + 20;
+    const percentual2 = Math.random() * (30 - 20) + 20;
+    const valorCalculadoCmat = (lucro_bruto * percentual) / 100;
+    const valorCalculadoCman = (lucro_bruto * percentual) / 100;
+
+    return valorCalculadoCmat, valorCalculadoCman;
+    
     const iptcmat = valorCalculadoCmat;
     const iptcman = valorCalculadoCman;
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
@@ -26,14 +34,6 @@ async function salvar() {
     document.forms[0].reset();
     DesenhaTabela();
 };
-
-await function calcularRandomPercentual(iptlucro_bruto) {
-    const percentual1 = Math.random() * (30 - 20) + 20;
-    const percentual2 = Math.random() * (30 - 20) + 20;
-    const valorCalculadoCmat = (lucro_bruto * percentual) / 100;
-    const valorCalculadoCman = (lucro_bruto * percentual) / 100;
-    return valorCalculadoCmat, valorCalculadoCman;
-}
 
 async function editar() {
     const iptid = document.getElementById('id');
