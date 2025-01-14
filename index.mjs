@@ -51,46 +51,60 @@ try {
 } catch (error) {
     console.error('Erro ao popular o banco de dados:', error);
 }}
+
 const dadosIniciais = {
-    Categoria: [
-        { nome: 'Eletrônicos', descricao: 'Dispositivos eletrônicos e acessórios' },
-        { nome: 'Roupas', descricao: 'Vestuário masculino e feminino' },
-        { nome: 'Alimentos', descricao: 'Produtos alimentícios' },
-    ],
-    Cliente: [
-        { primeiro_nome: 'João', sobrenome: 'Silva', cpf: '12345678901', email: 'joao@gmail.com', nascimento: '1990-01-15' },
-        { primeiro_nome: 'Maria', sobrenome: 'Souza', cpf: '98765432109', email: 'maria@gmail.com', nascimento: '1985-07-22' },
-        { primeiro_nome: 'Carlos', sobrenome: 'Oliveira', cpf: '45678912300', email: 'carlos@gmail.com', nascimento: '1978-03-10' },
-    ],
     Funcionario: [
-        { primeiro_nome: 'Ana', sobrenome: 'Pereira', cpf: '32165498700', email: 'ana@gmail.com', nascimento: '1995-05-30', salario: 3000.00 },
-        { primeiro_nome: 'Pedro', sobrenome: 'Costa', cpf: '65478932100', email: 'pedro@gmail.com', nascimento: '1988-11-12', salario: 3500.00 },
+        { nome: 'João Silva', cargo: 'Gerente', salario: 4500 },
+        { nome: 'Maria Oliveira', cargo: 'Vendedora', salario: 3000 },
+        { nome: 'Carlos Pereira', cargo: 'Analista', salario: 4000 },
+        { nome: 'Ana Souza', cargo: 'Atendente', salario: 2500 },
+        { nome: 'Pedro Santos', cargo: 'Supervisor', salario: 4200 },
+        { nome: 'Juliana Almeida', cargo: 'Assistente', salario: 2800 },
+        { nome: 'Fernando Costa', cargo: 'Motorista', salario: 3200 },
+        { nome: 'Paula Lima', cargo: 'Técnica', salario: 3500 },
+        { nome: 'Bruno Rocha', cargo: 'Estagiário', salario: 1500 },
+        { nome: 'Carla Mendes', cargo: 'Coordenadora', salario: 5000 },
     ],
     Lucrocusto: [
-        { mes: 'Janeiro', lucro_bruto: 10000.00, fp: 2000.00, cmat: 3000.00, cman: 1500.00 },
-        { mes: 'Fevereiro', lucro_bruto: 15000.00, fp: 2500.00, cmat: 4000.00, cman: 2000.00 },
-        { mes: 'Março', lucro_bruto: 20000.00, fp: 3000.00, cmat: 5000.00, cman: 2500.00 },
-        { mes: 'Abril', lucro_bruto: 25000.00, fp: 3500.00, cmat: 6000.00, cman: 3000.00 },
-        { mes: 'Maio', lucro_bruto: 30000.00, fp: 4000.00, cmat: 7000.00, cman: 3500.00 },
-        { mes: 'Junho', lucro_bruto: 35000.00, fp: 4500.00, cmat: 8000.00, cman: 4000.00 },
-        { mes: 'Julho', lucro_bruto: 40000.00, fp: 5000.00, cmat: 9000.00, cman: 4500.00 },
-        { mes: 'Agosto', lucro_bruto: 45000.00, fp: 5500.00, cmat: 10000.00, cman: 5000.00 },
-        { mes: 'Setembro', lucro_bruto: 50000.00, fp: 6000.00, cmat: 11000.00, cman: 5500.00 },
-        { mes: 'Outubro', lucro_bruto: 55000.00, fp: 6500.00, cmat: 12000.00, cman: 6000.00 },
-        { mes: 'Novembro', lucro_bruto: 60000.00, fp: 7000.00, cmat: 13000.00, cman: 6500.00 },
-        { mes: 'Dezembro', lucro_bruto: 65000.00, fp: 7500.00, cmat: 14000.00, cman: 7000.00 },
+        { mes: 'Janeiro', lucro_bruto: 10000, fp: 2000, cmat: 1500, cman: 1000 },
+        { mes: 'Fevereiro', lucro_bruto: 12000, fp: 2500, cmat: 1700, cman: 1300 },
+        { mes: 'Março', lucro_bruto: 11000, fp: 2200, cmat: 1600, cman: 1200 },
+        { mes: 'Abril', lucro_bruto: 11500, fp: 2300, cmat: 1650, cman: 1250 },
+        { mes: 'Maio', lucro_bruto: 12500, fp: 2600, cmat: 1800, cman: 1400 },
+        { mes: 'Junho', lucro_bruto: 13000, fp: 2700, cmat: 1850, cman: 1450 },
+        { mes: 'Julho', lucro_bruto: 14000, fp: 3000, cmat: 2000, cman: 1500 },
+        { mes: 'Agosto', lucro_bruto: 13500, fp: 2900, cmat: 1950, cman: 1450 },
+        { mes: 'Setembro', lucro_bruto: 12500, fp: 2600, cmat: 1800, cman: 1400 },
+        { mes: 'Outubro', lucro_bruto: 15000, fp: 3200, cmat: 2100, cman: 1600 },
+        { mes: 'Novembro', lucro_bruto: 15500, fp: 3300, cmat: 2150, cman: 1650 },
+        { mes: 'Dezembro', lucro_bruto: 16000, fp: 3400, cmat: 2200, cman: 1700 },
+    ],
+    Categoria: [
+        { nome: 'Eletrônicos' },
+        { nome: 'Roupas' },
+        { nome: 'Alimentos' },
+        { nome: 'Livros' },
+        { nome: 'Móveis' },
     ],
     Produto: [
-        { nome: 'Notebook', preco: 3500.00, quantidade: 10, categoria_id: 1 },
-        { nome: 'Camiseta', preco: 50.00, quantidade: 100, categoria_id: 2 },
-        { nome: 'Arroz 5kg', preco: 25.00, quantidade: 50, categoria_id: 3 },
+        { nome: 'Televisão', preco: 1200, categoriaId: 1 },
+        { nome: 'Calça Jeans', preco: 150, categoriaId: 2 },
+        { nome: 'Notebook', preco: 3000, categoriaId: 1 },
+        { nome: 'Cadeira', preco: 350, categoriaId: 5 },
+        { nome: 'Smartphone', preco: 2000, categoriaId: 1 },
     ],
     Pedido: [
-        { id_cliente: 1, id_produto: 1, valor: 3500.00, data: '2025-01-12' },
-        { id_cliente: 2, id_produto: 2, valor: 100.00, data: '2025-01-12' },
-        { id_cliente: 3, id_produto: 3, valor: 75.00, data: '2025-01-12' },
+        { clienteId: 1, produtoId: 1, quantidade: 2, total: 2400 },
+        { clienteId: 2, produtoId: 3, quantidade: 1, total: 3000 },
+        { clienteId: 3, produtoId: 2, quantidade: 3, total: 450 },
+    ],
+    Cliente: [
+        { nome: 'Lucas Silva', email: 'lucas@exemplo.com' },
+        { nome: 'Gabriela Costa', email: 'gabriela@exemplo.com' },
+        { nome: 'Renato Almeida', email: 'renato@exemplo.com' },
     ],
 };
+
 
 autoPopulate();
 
