@@ -1,21 +1,13 @@
 import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_lucrocusto.js";
-import { getListaFun} from "../funcionario/acessa_dados_funcionarios.js";
 
 //Funções
 async function salvar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
-
+    const iptfp = document.getElementById('fp');
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
-
-    async function calcularFp() {
-        const objFun = await getListaFun(); // Substitua por sua lógica de busca (API, banco de dados, etc.)
-        return objFun.reduce((soma, func) => soma + parseFloat(func.salario || 0), 0);
-    }
-
-    const iptfp = await calcularFp();
 
 
     const obj = {

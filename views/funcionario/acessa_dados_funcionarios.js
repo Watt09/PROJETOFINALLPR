@@ -1,4 +1,4 @@
-async function getListaFun() {
+async function getLista() {
     const resposta = await fetch('https://projetofinallpr.onrender.com/funcionarios/listar');
     const funcionarios = await resposta.json();
     return funcionarios;
@@ -48,5 +48,5 @@ async function buscaUm(id){
     const funcionario = await resposta.json();
     return funcionario;
 }
-export {getListaFun, novo, remove, edita, buscaUm};
+export {getLista, novo, remove, edita, buscaUm};
 
