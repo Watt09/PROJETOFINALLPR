@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import conexao from "../database/mysql.mjs";
-import Funcionario from "/funcionario.mjs";
+import Funcionario from "./funcionario.mjs";
 
 const Lucrocusto = conexao.define('Lucrocusto', {
   mes: {
