@@ -1,12 +1,15 @@
 import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_lucrocusto.js";
 
 //Funções
+
+
+
 async function salvar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
-    const iptcmat = document.getElementById('cmat');
-    const iptcman = document.getElementById('cman');
+    const iptcmat = valorCalculadoCmat;
+    const iptcman = valorCalculadoCman;
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
@@ -24,13 +27,21 @@ async function salvar() {
     DesenhaTabela();
 };
 
+function calcularRandomPercentual(iptlucro_bruto) {
+    const percentual1 = Math.random() * (30 - 20) + 20;
+    const percentual2 = Math.random() * (30 - 20) + 20;
+    const valorCalculadoCmat = (lucro_bruto * percentual) / 100;
+    const valorCalculadoCman = (lucro_bruto * percentual) / 100;
+    return valorCalculadoCmat, valorCalculadoCman;
+}
+
 async function editar() {
     const iptid = document.getElementById('id');
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
-    const iptcmat = document.getElementById('cmat');
-    const iptcman = document.getElementById('cman');
+    const iptcmat = valorCalculadoCmat;
+    const iptcman = valorCalculadoCman;
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
@@ -75,8 +86,8 @@ async function ManipulaEditar(event) {
     document.getElementById('mes').value = lucrocusto.mes;
     document.getElementById('lucro_bruto').value = lucrocusto.lucro_bruto;
     document.getElementById('fp').value = lucrocusto.fp;
-    document.getElementById('cmat').value = lucrocusto.cmat;
-    document.getElementById('cman').value = lucrocusto.cman;
+    valorCalculadoCmat.value = lucrocusto.cmat;
+    valorCalculadoCman.value = lucrocusto.cman;
 
 }
 
