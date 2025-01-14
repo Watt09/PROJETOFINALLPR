@@ -1,23 +1,12 @@
 import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_lucrocusto.js";
 
 //Funções
-
-
-
 async function salvar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
-
-    const percentual1 = Math.random() * (30 - 20) + 20;
-    const percentual2 = Math.random() * (30 - 20) + 20;
-    const valorCalculadoCmat = (iptlucro_bruto * percentual1) / 100;
-    const valorCalculadoCman = (iptlucro_bruto * percentual2) / 100;
-
-    return valorCalculadoCmat, valorCalculadoCman;
-
-    const iptcmat = valorCalculadoCmat;
-    const iptcman = valorCalculadoCman;
+    const iptcmat = document.getElementById('cmat');
+    const iptcman = document.getElementById('cman');
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
@@ -40,8 +29,8 @@ async function editar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
     const iptfp = document.getElementById('fp');
-    const iptcmat = valorCalculadoCmat;
-    const iptcman = valorCalculadoCman;
+    const iptcmat = document.getElementById('cmat');
+    const iptcman = document.getElementById('cman');
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
 
 
@@ -86,8 +75,8 @@ async function ManipulaEditar(event) {
     document.getElementById('mes').value = lucrocusto.mes;
     document.getElementById('lucro_bruto').value = lucrocusto.lucro_bruto;
     document.getElementById('fp').value = lucrocusto.fp;
-    valorCalculadoCmat.value = lucrocusto.cmat;
-    valorCalculadoCman.value = lucrocusto.cman;
+    document.getElementById('cmat').value = lucrocusto.cmat;
+    document.getElementById('cman').value = lucrocusto.cman;
 
 }
 
@@ -95,17 +84,6 @@ async function DesenhaTabela() {
     const tbody = document.getElementById('tbody1');
     tbody.innerHTML = '';
     const dados = await getLista();
-
-    dados.sort((a, b) => {
-
-        const meses = [
-            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
-            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
-        ];
-
-        return meses.indexOf(a.mes) - meses.indexOf(b.mes);
-    });
-
     for (let i = 0; i < dados.length; i++) {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
