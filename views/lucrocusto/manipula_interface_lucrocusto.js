@@ -1,11 +1,11 @@
 import { getLista, novo, remove, edita, buscaUm } from "./acessa_dados_lucrocusto.js";
-import { getListaFun} from "./acessa_dados_funcionarios.js";
+import { getListaFun} from "../funcionario/acessa_dados_funcionarios.js";
 
 //Funções
 async function salvar() {
     const iptmes = document.getElementById('mes');
     const iptlucro_bruto = document.getElementById('lucro_bruto');
-    
+
     const iptcmat = document.getElementById('cmat');
     const iptcman = document.getElementById('cman');
     const iptlucro_liquido = iptlucro_bruto - (iptfp + iptcmat + iptcman);
