@@ -103,6 +103,7 @@ async function DesenhaTabela() {
 
     for (let i = 0; i < dados.length; i++) {
         const tr = document.createElement('tr');
+        const tr = document.createElement('tr');
         const td1 = document.createElement('td');
         const td2 = document.createElement('td');
         const td3 = document.createElement('td');
@@ -129,7 +130,18 @@ async function DesenhaTabela() {
         td4.innerText = dados[i].cman;
         td5.innerText = dados[i].lucro_liquido;
         td6.append(btExc, btEdi);
+
+        td8.innerText =totalLucroBruto
+        td9.innerText =totalFP
+        td10.innerText =totalCMAT
+        td11.innerText =totalCMAN
+        td12.innerText =totalLucroLiquido
+        td13.innerText ="Total anual"
+        td14.innerText =
+        td14.innerText =
+
         tr.append(td7, td1, td2, td3, td4, td5, td6);
+        tr.append(td8, td9, td10, td11, td12, td13, td14);
         tbody.append(tr);
 
         totalLucroBruto += dados[i].lucro_bruto;
@@ -138,30 +150,6 @@ async function DesenhaTabela() {
         totalCMAN += dados[i].cman;
         totalLucroLiquido += dados[i].lucro_liquido;
     }
-
-    const totalRow = document.createElement('tr');
-    totalRow.style.fontWeight = 'bold'; // Destacar a linha de totais
-    totalRow.style.backgroundColor = '#f0f0f0'; // Fundo claro para separação visual
-
-    const tdMesTotal = document.createElement('td');
-    tdMesTotal.innerText = 'Totais';
-    const tdLucroBrutoTotal = document.createElement('td');
-    tdLucroBrutoTotal.innerText = totalLucroBruto;
-    const tdFPTotal = document.createElement('td');
-    tdFPTotal.innerText = totalFP;
-    const tdCMATTotal = document.createElement('td');
-    tdCMATTotal.innerText = totalCMAT;
-    const tdCMANTotal = document.createElement('td');
-    tdCMANTotal.innerText = totalCMAN;
-    const tdLucroLiquidoTotal = document.createElement('td');
-    tdLucroLiquidoTotal.innerText = totalLucroLiquido;
-    const tdEmpty = document.createElement('td'); // Célula vazia para os botões
-
-    // Adicionar células à linha total
-    totalRow.append(tdMesTotal, tdLucroBrutoTotal, tdFPTotal, tdCMATTotal, tdCMANTotal, tdLucroLiquidoTotal, tdEmpty);
-
-    // Adicionar a linha total ao final do tbody
-    tbody.append(totalRow);
 }
 
 //Viculações
