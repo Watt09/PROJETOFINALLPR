@@ -27,7 +27,7 @@ async function salvar() {
     DesenhaTabela();
 };
 
-function calcularRandomPercentual(iptlucro_bruto) {
+await function calcularRandomPercentual(iptlucro_bruto) {
     const percentual1 = Math.random() * (30 - 20) + 20;
     const percentual2 = Math.random() * (30 - 20) + 20;
     const valorCalculadoCmat = (lucro_bruto * percentual) / 100;
