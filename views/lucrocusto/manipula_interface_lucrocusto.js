@@ -84,6 +84,17 @@ async function DesenhaTabela() {
     const tbody = document.getElementById('tbody1');
     tbody.innerHTML = '';
     const dados = await getLista();
+
+    dados.sort((a, b) => {
+
+        const meses = [
+            "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+            "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        return meses.indexOf(a.mes) - meses.indexOf(b.mes);
+    });
+
     for (let i = 0; i < dados.length; i++) {
         const tr = document.createElement('tr');
         const td1 = document.createElement('td');
